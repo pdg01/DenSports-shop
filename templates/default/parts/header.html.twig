@@ -1,0 +1,104 @@
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light  text-white">
+        <div class="container bg-secondary">
+            <a class="navbar-brand text-white" href="{{ url('homepage') }}">
+                <img style="max-width: 100px; height: auto; vertical-align: middle;" src="{{ asset('images/logo%20Den%20Sports.png') }}">
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo02">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="{{ url('homepage') }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                            {% for category in twigGlobalsService.getMenuCategories() %}
+                                <a class="dropdown-item text-center" href="{{ url('category',{'category':category.id}) }}">{{ category.name }}<span class="badge badge-secondary ml-1">{{ category.getProducts()|length }}</span></a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url('adminPanel') }}">Admin panel</a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+                <ul class="navbar-nav text-center ml-5 mr-5">
+                    <li class="nav-item mx-auto text-center">
+                        {{ render(controller('App\\Controller\\SearchController::searchBar')) }}
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav text-center mt-3 mt-lg-0">
+                    <li class="nav-item mr-2">
+                        {% if app.user %}
+                            <a class="nav-link btn btn-lg ml-2 text-white" data-toggle="popover" data-trigger="focus" title="Logout, {{ app.user.username }}" data-placement="bottom" data-content="<a class='btn btn-secondary' href={{ path('app_logout') }}>Logout</a>">
+                                <i class="fa fa-user"></i> {{ app.user.username }}
+                            </a>
+                        {% else %}
+                            <a class="nav-link text-white" href="{{ url('app_login') }}">
+                                <i class="fa fa-user"></i>
+                                <span class="ml-2">Contul meu</span>
+                            </a>
+                        {% endif %}
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white mb-2" href="{{ url('app_cart') }}">
+                            <i class="fa fa-cart-shopping"></i>
+                            {% if cartService.getCartCount() > 0 %}
+                                <span class="badge badge-danger">{{ cartService.getCartCount() }}</span>
+                            {% endif %}
+                            <span class="ml-2">Cosul meu</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        $(function () {
+            $("[data-toggle=popover]").popover({
+                trigger: "manual",
+                html: true,
+                content: function () {
+                    var content = $(this).attr("data-popover-content");
+                    return $(content).children(".popover-body").html();
+                },
+                title: function () {
+                    var title = $(this).attr("data-popover-content");
+                    return $(title).children(".popover-heading").html();
+                }
+            })
+                .on("mouseenter", function () {
+                    var _this = this;
+
+                    $(_this).popover("show");
+
+                    $(".popover").on("mouseleave", function () {
+                        setTimeout(function () {
+                            if (!$(".popover:hover").length) {
+                                $(_this).popover("hide");
+                            }
+                        }, 300);
+                    });
+                })
+                .on("mouseleave", function () {
+                    var _this = this;
+                    setTimeout(function () {
+                        if (!$(".popover:hover").length) {
+                            $(_this).popover("hide");
+                        }
+                    }, 300);
+                });
+        });
+    </script>
+{% endblock %}

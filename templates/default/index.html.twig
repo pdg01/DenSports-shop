@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Den Sports{% endblock %}
+
+{% block body %}
+
+
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 h-100" src="{{ asset('images/preview-biker.png')}}" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lorem ipsum</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, facere.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-100" src="images/preview-electric-scooter.jpg" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lorem ipsum</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, facere.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-100" src="images/preview-electric-scooter2.jpg" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lorem ipsum</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, facere.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-100" src="images/scooters.png" alt="Fourth slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lorem ipsum</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, facere.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-100" src="images/woman-electric-scooter.png" alt="Fifth slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lorem ipsum</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, facere.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-inline-block w-100 h-100" src="images/preview-skateboarder.jpg" alt="Sixth slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lorem ipsum</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, facere.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container mt-5 ">
+        <h2 class="text-center mb-5" style="font-family: Broadway;">Categories</h2>
+        <div class="row justify-content-center ">
+            <a href='/Dennis/myShop/public/index.php/cat/view/4'>
+            <div class="card mr-5 mb-3" style="width: 24rem;height: 16rem;">
+                <img class="card-img" src="images/preview-biker.png" alt="preview-biker">
+            </div></a>
+            <a href='/Dennis/myShop/public/index.php/cat/view/6'>
+            <div class="card mr-5 mb-3" style="width: 24rem;height: 16rem;">
+                <img class="card-img" src="images/preview-electric-scooter.jpg" alt="preview-electric-scooter">
+            </div></a>
+            <a href='/Dennis/myShop/public/index.php/cat/view/5'>
+            <div class="card mr-5 mb-3" style="width: 24rem;height: 16rem;">
+               <img class="card-img" src="images/woman-electric-scooter.png" alt="woman-electric-scooter">
+            </div></a>
+            <a href='/Dennis/myShop/public/index.php/cat/view/7'>
+            <div class="card mr-5 mb-3" style="width: 24rem;height: 16rem;">
+                <img class="card-img" src="images/preview-skateboarder.jpg" alt="preview-skateboarder">
+            </div></a>
+            <a href='/Dennis/myShop/public/index.php/cat/view/8'>
+            <div class="card mr-5 mb-3" style="width: 24rem;height: 16rem;">
+                <img class="card-img" src="images/preview-sky.jpg" alt="preview-sky">
+            </div>
+            </a>
+            <a href='/Dennis/myShop/public/index.php/cat/view/9'>
+            <div class="card mr-5 mb-3" style="width: 24rem;height: 16rem;">
+                <img class="card-img" src="images/preview-footbal.jpg" alt="preview-footbal">
+            </div></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="book mr-5">
+                <section id="title-about" class="page active" style="display: flex;justify-content: center;align-items: center;">
+                    <h2 class="text-center" style="font-family: Broadway;">About Us</h2>
+                </section>
+                <section id="about" class="page">
+                    <h2 class="text-center mb-5">About Us</h2>
+                    <p>Bine ați venit la Den Sports, destinația dvs. principală pentru echipamente sportive de înaltă calitate și accesorii.</p>
+                    <p>La Den Sports, pasiunea pentru sport se întâlnește cu angajamentul pentru calitate și performanță. Suntem o destinație dedicată celor care apreciază fiecare moment petrecut în mișcare și căutăm mereu să oferim echipamente sportive de înaltă calitate și accesorii care să completeze fiecare activitate.</p>
+                    <p>Cu o gamă variată de echipamente pentru toate tipurile de sporturi, suntem dedicați să îmbunătățim experiența dumneavoastră în sport.</p>
+                    <p>Indiferent dacă sunteți un atlet de performanță sau un entuziast al activităților în aer liber, la Den Sports veți găsi tot ce aveți nevoie pentru a vă exprima pasiunea pentru sport.</p>
+                </section>
+            </div>
+            <div class="book">
+                <section id="title-reviews" class="page" style="display: flex;justify-content: center;align-items: center;">
+                    <h2 class="text-center" style="font-family: Broadway;">Client Reviews</h2>
+                </section>
+                <section id="reviews" class="page">
+                    <h2 class="text-center">Client Reviews</h2>
+                    <div class="review">
+                        <h3>Popescu George</h3>
+                        {%for i in range(0,4) %}
+                        <i class="fa fa-star" style="color: gold"></i>
+                        {% endfor %}
+                        <p><blockquote>Am fost foarte impresionat de calitatea produselor și de serviciile excelente oferite de Sportive Gear. Recomand cu încredere!</blockquote></p>
+                    </div>
+                    <div class="review">
+                        <h3>Ciausu Ionela</h3>
+                        {%for i in range(0,3) %}
+                            <i class="fa fa-star" style="color: gold"></i>
+                        {% endfor %}
+                        <p><blockquote>Echipa de la Sportive Gear a fost extrem de utilă în alegerea echipamentului potrivit pentru nevoile mele. Mulțumesc!</blockquote></p>
+                    </div>
+                    <div class="review">
+                        <h3>Popescu Ana</h3>
+                        {%for i in range(0,4) %}
+                            <i class="fa fa-star" style="color: gold"></i>
+                        {% endfor %}
+                        <p><blockquote>Produsele sunt de calitate și livrarea a fost rapidă. Sunt foarte mulțumită!</blockquote></p>
+                    </div>
+                    <div class="review">
+                        <h3>Ionescu Marius</h3>
+                        {%for i in range(0,4) %}
+                            <i class="fa fa-star" style="color: gold"></i>
+                        {% endfor %}
+                        <p><blockquote>Echipa de la Den Sports este foarte profesionistă. Recomand cu încredere!</blockquote></p>
+                    </div>
+                    <div class="review">
+                        <h3>Radu Andrei</h3>
+                        {%for i in range(0,3) %}
+                            <i class="fa fa-star" style="color: gold"></i>
+                        {% endfor %}
+                        <p><blockquote>Serviciile clienților sunt excelente. Am primit răspunsuri prompte la întrebările mele.</blockquote></p>
+                    </div>
+                    <div class="review">
+                        <h3>Georgescu Elena</h3>
+                        {%for i in range(0,4) %}
+                            <i class="fa fa-star" style="color: gold"></i>
+                        {% endfor %}
+                        <p><blockquote>Am cumpărat mai multe echipamente de la Den Sports și sunt foarte mulțumită de fiecare produs în parte.</blockquote></p>
+                    </div>
+                    <div class="review">
+                        <h3>Constantinescu Alex</h3>
+                        {%for i in range(0,3) %}
+                            <i class="fa fa-star" style="color: gold"></i>
+                        {% endfor %}
+                        <p><blockquote>Recomand Den Sports tuturor celor pasionați de sport. Veți găsi produse excelente și servicii de calitate.</blockquote></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title %}Admin Panel{% endblock %}
+{% block body %}
+
+
+    <h1>
+        Admin Panel
+    </h1>
+    <div class="container">
+        <table class="table ">
+            <thead class="text-center">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Link
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    User index
+                </td>
+                <td>
+                    <a href="{{ url('app_user_index') }}">User index Link</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Add category
+                </td>
+                <td>
+                    <a href="{{ url('category_form') }}">Add category Link</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Create product
+                </td>
+                <td>
+                    <a href="{{ url('product_form') }}">Create product Link</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Product index
+                </td>
+                <td>
+                    <a href="{{ url('app_crud_product_index') }}">View all products Link</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

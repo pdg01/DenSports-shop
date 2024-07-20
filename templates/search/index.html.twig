@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="container" style="box-shadow: none !important; border: none !important;">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <h2>Rezultatele cautarii: "{{ app.request.request.all['form']['search'] }}"</h2>
+            </div>
+
+            {% for product in products %}
+            <div class="row" >
+                {{ include ('default/product/productCard.html.twig') }}
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}
