@@ -1,0 +1,33 @@
+<?php //App%255CEntity%255CCategory%2524file
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Validator\\Constraints\\Image'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Image')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'groups' => [
+                [
+                    'Default',
+                ],
+            ],
+            'minWidth' => [
+                200,
+            ],
+            'maxWidth' => [
+                4000,
+            ],
+            'maxHeight' => [
+                4000,
+            ],
+            'minHeight' => [
+                200,
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+); }];
